@@ -1,0 +1,132 @@
+<!-- inicio.html -->
+{% extends 'core/index.html' %}
+{% load static %}
+
+{% block title %}FUTURAR{% endblock %}
+
+{% block extra_css %}{% endblock %}
+
+{% block content %}
+    <!-- Sección de Banner -->
+    <main id="pagina">
+        <section id="pagina-imagen">
+            <section class="section section-lg section-main-bunner section-main-bunner-filter">
+              <div class="main-bunner-img"></div>
+              <div class="main-bunner-inner">
+                <div class="container">
+                  <div class="row row-50 justify-content-lg-center align-items-lg-center">
+                    <div class="col-lg-12">
+                      <div class="bunner-content-modern text-center">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+        </section>
+
+        <!-- Sección Qué Ofrecemos -->
+        <section id="pagina-contenido">
+            <section class="section section-xl">
+                <div class="container">
+                    <div class="row row-50 justify-content-lg-between align-items-lg-center">
+                        <div class="col-lg-6">
+                            
+                            <div class="box-img-animate">
+                                {% for imagen in inicio.imagenes_animadas.all %}
+                                    <div class="box-img-animate-item" data-parallax-scroll="{&quot;y&quot;: 0, &quot;x&quot;: 140,  &quot;smoothness&quot;: 50 }">
+                                        <img style="border-radius: 50%; border: 3px solid;" class="futurar-color-orange" src="{{ imagen.imagen.url }}"  alt="">
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-xl-5">
+                            <div class="innset-xl-left-66 adjustable-text">
+                                <h3>QU&Eacute; OFRECEMOS</h3>
+                                <p class="text-opacity-80">
+                                    {{ inicio.que_ofrecemos|safe }}
+                                </p>
+                                <div class="row row-50">
+                                    <div class="col-md-6 col-lg-12">
+                                        {% for subpunto in inicio.sub_puntos.all %}
+                                            <div class="box-icon-modern">
+                                                <div class="box-icon-inner decorate-rectangle">
+                                                    <span class="icon-xl linearicons-pushpin icon-primary"></span>
+                                                </div>
+                                                <div class="box-icon-caption">
+                                                    <h4>{{ subpunto.sub_punto_titulo|safe }}</h4> <!-- Cambiado a subpunto -->
+                                                    <p>{{ subpunto.sub_punto_parrafo|safe }}</p> <!-- Cambiado a subpunto -->
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- MISIÓN -->
+            <section class="section section-lg bg-gray-1">
+                <div class="container">
+                    
+                    <div class="row justify-content-center text-center adjustable-text">
+                        <div class="col-md-9 col-lg-7 wow-outer">
+                            <div class="wow slideInDown">
+                                <h2>NUESTRA MISI&Oacute;N</h2>
+                                <p>
+                                    {{ inicio.mision|safe }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow-outer">
+                        <div class="wow fadeInUp">
+                            <article class="box-causes">
+                                <h4 class="font-weight-medium"><a href="{% url 'donaciones' %}" style="font-size: 32px;">¿Querés hacer una donación?</a></h4>
+                                <br>
+                                <div class="box-causes-img">
+                                    <img src="{% static 'images/070-donaciones.png' %}" alt="" width="200" height="200"/><a class="button button-sm button-primary" href="{% url 'donaciones' %}">Donar</a>
+                                </div>                                
+                            </article>
+                        </div>
+                    </div>
+                    <!--
+                    <div class="row row-50">
+                        <div class="col-md-6 col-lg-4 wow-outer">
+                            <div class="wow fadeInUp">
+                                <article class="box-causes">
+                                    <div class="box-causes-img"><img src="{% static 'images/070-donaciones.png' %}" alt="" width="200" height="200"/><a class="button button-sm button-primary" href="{% url 'donaciones' %}">Donar</a>
+                                    </div>
+                                    <h4 class="font-weight-medium"><a href="{% url 'donaciones' %}">¿Querés donarnos lo que puedas?</a></h4>
+                                    </p>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 wow-outer">
+                        <div class="wow fadeInUp">
+                            <article class="box-causes">
+                            <div class="box-causes-img"><img src="{% static 'images/071-donaciones.png' %}" alt="" width="200" height="200"/><a class="button button-sm button-primary" href="{% url 'donaciones' %}">Donar</a>
+                            </div>
+                            <h4 class="font-weight-medium"><a href="{% url 'donaciones' %}">¿Querés donar ropa o artículos?</a></h4>
+                            </p>
+                            </article>
+                        </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 wow-outer">
+                        <div class="wow fadeInUp">
+                            <article class="box-causes">
+                            <div class="box-causes-img"><img src="{% static 'images/080-contacto.png' %}" alt="" width="200" height="200"/><a class="button button-sm button-primary" href="{% url 'contacto' %}">Contacto</a>
+                            </div>
+                            <h4 class="font-weight-medium"><a href="{% url 'contacto' %}">¿Querés contactarnos?</a></h4>
+                            </p>
+                            </article>
+                        </div>
+                        </div>
+                    </div>
+                    -->
+                </div>
+            </section>
+        </section>
+    </main>
+{% endblock %}

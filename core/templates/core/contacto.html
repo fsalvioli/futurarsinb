@@ -1,0 +1,48 @@
+<!-- inicio.html -->
+{% extends 'core/index.html' %}
+{% load static %}
+
+{% block title %}FUTURAR{% endblock %}
+
+{% block extra_css %}{% endblock %}
+
+{% block content %}
+<section class="section section-lg bg-gray-1 text-center">
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-md-9 col-lg-7">
+          <h3>¡Contactanos!</h3>
+
+          <!-- Formulario de contacto -->
+          <form class="rd-form rd-mailform" method="post">
+            {% csrf_token %}
+
+            <div class="form-wrap">
+                <!-- Estilo para el label del nombre -->
+                <label for="contact-name" class="form-label">Nombre</label>
+                {{ form.nombre }}  <!-- Campo de texto con estilo personalizado -->
+            </div>
+        
+            <div class="form-wrap">
+                <!-- Estilo para el label del email -->
+                <label for="contact-email" class="form-label">Correo Electrónico</label>
+                {{ form.email }}
+            </div>
+        
+            <div class="form-wrap">
+                <!-- Estilo para el label del mensaje -->
+                <label for="contact-message" class="form-label">Mensaje</label>
+                {{ form.mensaje }}
+            </div>
+
+            <div class="row justify-content-center">
+              <div class="col-12 col-sm-7 col-lg-5">
+                <button class="button button-block button-lg button-primary" type="submit">Enviar</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

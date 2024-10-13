@@ -1,0 +1,142 @@
+/* donaciones.css */
+
+#donaciones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+h1, h2, h3 {
+    /*color: #333;*/
+    text-align: center;
+}
+
+.card {
+    background-color: #ffbf91; /* Color naranja suave */
+    border-radius: 15px;
+    padding: 20px;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+#cbu-info {
+    background-color: #fff3e0; /* Color de fondo para la info del CBU */
+    border: 1px solid #ffa726; /* Borde naranja */
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 10px;
+}
+
+#donaciones button {
+    background-color: #ff8c00; /* Color naranja más oscuro para el botón */
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+#donaciones button:hover {
+    background-color: #e07b00; /* Color más oscuro para el hover */
+}
+
+#otro-info {
+    background-color: #fff3e0; /* Color de fondo para la info del CBU */
+    border: 1px solid #ffa726; /* Borde naranja */
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: -15px;
+    margin: 80px;
+    align-content: center;
+}
+
+
+/* contacto: */
+
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffbf91;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    color: #333;
+    
+}
+
+.contact-form p {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.contact-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 90%;
+    background-color: #d3dbd9;
+}
+
+.submit-btn {
+    background-color: #ff7a3c; /* Color naranja suave */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-self: center;
+    width: 150px;
+}
+
+.submit-btn:hover {
+    background-color:  #ffbf91; /* Color naranja más oscuro */
+}
+
+form .errorlist {
+    color: red;
+    font-size: 0.9em;  /* Tamaño de fuente más pequeño */
+    margin-top: 5px;  /* Añade un margen superior para separarlo del campo de entrada */
+    list-style-type: none;  /* Elimina los puntos de la lista */
+    padding: 0;  /* Elimina el padding */
+}
+
+form .errorlist li {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    #otro-info {
+        padding: 10px;
+        margin-top: 0px;
+        margin: 0px;
+    }
+}

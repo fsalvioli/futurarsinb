@@ -1,0 +1,25 @@
+#programas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+#programas img:first-of-type {
+    width: 100%;
+    max-width: 450px; /* Ajusta el tamaño máximo de la imagen */
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: #ffbf91; /* Color naranja suave */
+    border-radius: 15px;
+    padding: 20px;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}

@@ -1,0 +1,20 @@
+{% extends 'core/index.html' %}
+{% load static %}
+
+{% block title %}FUTURAR - Error de Contacto{% endblock %}
+
+{% block content %}
+<section class="section section-lg bg-gray-1 text-center">
+    <div class="container">
+        <h3>Hubo un problema al enviar tu mensaje</h3>
+        <p>Lamentablemente, no pudimos enviar tu mensaje. Por favor, intenta nuevamente más tarde o revisa los detalles del formulario.</p>
+
+        <!-- Botón para volver al formulario de contacto -->
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-7 col-lg-5">
+                <a href="{% url 'contacto' %}" class="button button-block button-lg button-primary">Volver al formulario de contacto</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

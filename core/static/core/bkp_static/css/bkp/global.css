@@ -1,0 +1,333 @@
+
+
+body {
+    font-size: 15px;
+    font-family: verdana;
+    background-color: #feefd9; /* Color de fondo de la página */
+}
+body.high-contrast {
+    background-color: #777777; /* Gris oscuro */
+    /*color: #f1f1f1;*/ /* Color de texto claro */
+}
+body.high-contrast .header-card{
+    background-image: url('/static/images/cloud_orange_r-bw.png'); /* Ruta de tu imagen de fondo */
+    /*background-image: none; */
+    color: #2c2c2c;
+}
+body.high-contrast .menu-card {
+    background-color: #000000; /* Fondo de la tarjeta del menú en modo oscuro */
+}
+
+body.high-contrast .menu-toggle button .bar {
+    background-color: #ffffff; /* Color de las barras del botón del menú en modo oscuro */
+}
+body.high-contrast .menu-toggle button:hover{
+    background-color: #2c2c2c;
+}
+
+body.high-contrast .menu {
+    background-color: #3a3a3a; /* Fondo del menú desplegable en modo oscuro */
+}
+
+body.high-contrast footer {
+    background-color: gray; /* Fondo del footer en modo oscuro */
+}
+
+/* Ajustes para los enlaces del menú en modo oscuro */
+body.high-contrast .menu a {
+    background-color: #2c2c2c; /* Color de fondo de los enlaces en modo oscuro */
+    color: #f1f1f1; /* Color del texto de los enlaces en modo oscuro */
+}
+
+body.high-contrast .menu a:hover {
+    background-color: #777777; /* Color de fondo de los enlaces en hover en modo oscuro */
+}
+body.high-contrast .card{
+    background-color: #2c2c2c;
+    color: white;
+}
+body.high-contrast .accessibility-controls button {
+    background-color: #000000;
+    color: #feefd9;
+}
+body.high-contrast .accessibility-controls button:hover {
+    background-color: #3a3a3a;
+}
+/* donaciones: */
+body.high-contrast #cbu-info, #otro-info{
+    background-color: #3a3a3a; /* Color de fondo para la info del CBU */ 
+    border: 1px solid #000000; /* Borde  */
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 10px;
+}
+
+/* contacto: */
+body.high-contrast .contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #3a3a3a;;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body.high-contrast .contact-container h1 {
+    text-align: center;
+    color: #d3dbd9;
+    margin-bottom: 20px;
+}
+body.high-contrast form .errorlist {
+    color: #ffbf91;
+    font-size: 0.9em;  /* Tamaño de fuente más pequeño */
+    margin-top: 5px;  /* Añade un margen superior para separarlo del campo de entrada */
+    list-style-type: none;  /* Elimina los puntos de la lista */
+    padding: 0;  /* Elimina el padding */
+}
+
+body.high-contrast form .errorlist li {
+    margin: 0;
+}
+body.high-contrast .contact-form input,
+.contact-form textarea {
+    background-color: #d3dbd9;
+}
+body.high-contrast .contact-form{
+    color: #f1f1f1;
+}
+
+
+
+
+
+/* -------------------------------------------- */
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+.header-card {
+    background-image: url('/static/images/cloud_orange.png'); /* Ruta de tu imagen de fondo */
+    background-size: auto; /* Asegura que la imagen cubra todo el contenedor */
+    background-position: center; /* Centra la imagen */
+    border-radius: 20px; /* Bordes redondeados */
+    padding: 30px 20px; /* Espaciado interno */
+    margin: 5px; /* Espaciado externo para no pegarse a los bordes */
+    text-align: center; /* Centra el texto horizontalmente */
+    color: #1f2747; /* Color del texto */
+    /*background-color: #ffbf91;*/
+    font-family: 'LiberationSansRegular';
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar efecto de tarjeta */
+    width: calc(100% - 60px); /* Ajusta el ancho del header-card */
+    height: 150px;
+}
+
+.menu-card {
+    cursor: pointer; /* Asegura que todo el contenedor se vea como un botón */
+    background-color: chocolate;
+    border-radius: 20px; /* Bordes redondeados */
+    padding: 10px 10px; /* Espaciado interno */
+    margin: 5px; /* Espaciado externo para no pegarse a los bordes */
+    text-align: center; /* Centra el texto horizontalmente */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar efecto de tarjeta */
+    width: 60px; /* Ancho de la tarjeta del menú */
+    height: 180px;
+}
+
+
+.nube-img {
+    width: 300px; /* Ancho deseado */
+    height: auto; /* Altura automática para mantener la proporción */
+}
+
+.header-card h1 {
+    margin: 0; /* Quita el margen del h1 */
+    font-size: 4em !important; /* Ajusta el tamaño del h1 */
+    white-space: break-spaces;
+}
+.header-card h2 {
+    margin: 0; /* Quita el margen del h1 */
+    font-size: 2em !important; /* Ajusta el tamaño del h1 */
+    font-family: 'LiberationSansRegular';
+}
+
+.header-card p {
+    margin: 0; /* Añade un pequeño margen superior */
+    font-size: 2em !important; /* Ajusta el tamaño del párrafo */
+    font-family: 'LiberationSansRegular';
+}
+
+.logo-container {
+    float: left; /* Alinea el contenedor del logo a la derecha */
+    margin-left: 2px; /* Espacio entre el logo y el contenido del header */
+}
+
+.logo-container img {
+    width: 130px; /* Tamaño deseado para el logo */
+    height: 130px; /* Altura automática para mantener la proporción */
+    border-radius: 100px; /* Opcional: bordes redondeados para el logo */
+    margin-top: 8px;
+}
+
+/* Menu styles and animation */
+.menu {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    right: -500px; /* Initially out of view */
+    height: 100%;
+    width: 220px; /* Fixed width for the menu */
+    list-style-type: none;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: right 0.3s ease;
+    overflow: hidden; /* Ensure no part of the menu is visible */
+}
+
+.menu.open {
+    right: 0;
+}
+/*
+.menu a {
+    color: black;
+    text-decoration: none;
+    padding: 8px 4px;
+    margin: 5px 0;
+    background-color: #d3dbd9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: block;
+    width: 100%;
+}
+*/
+.menu a:hover {
+    background-color: #ff9a52;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+}
+
+/*img iconos menú*/
+.menu li a {
+    display: flex;
+    align-items: center; /* Centra verticalmente el contenido */
+    text-decoration: none; /* Quita el subrayado del enlace */
+    padding: 10px 12px; /* Ajusta el padding según el diseño */
+    border-radius: 10px; /* Bordes redondeados para el botón */
+    background-color: #ffdabf; /* Color de fondo */
+    margin: 5px 0; /* Espaciado entre los elementos del menú */
+    font-family: Verdana;
+    width: 200px; /* Ancho fijo para los botones */
+    color: #2c2c2c;
+
+}
+
+.menu li a img {
+    width: 40px; /* Ajusta el tamaño del icono */
+    height: 40px; /* Altura automática para mantener la proporción */
+    margin-right: 8px; /* Espacio entre el icono y el texto */
+}
+
+.menu-toggle {
+    display: flex;
+    justify-content: center; /* Centra el botón horizontalmente */
+    align-items: center; /* Centra el botón verticalmente */
+    height: 100%; /* Asegura que el contenedor del botón ocupe toda la altura de la tarjeta */
+}
+
+.menu-toggle button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.menu-toggle button .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    background-color: white;
+}
+/*
+.menu-toggle :hover {
+    background-color: #ffdabf;
+    border-radius: 10px;
+}
+    */
+.accessibility-controls {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 20px;
+}
+.accessibility-controls button {
+    background-color:  #ff9a52;
+    border: none;
+    font-size: 20px;
+    border-radius: 50%;
+    color: #000000;
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+.accessibility-controls button:hover {
+    background-color: #0fc3e8;
+}
+
+/* Estilos para el footer */
+footer {
+    background-color: #d3dbd9; /* Color de fondo del footer */
+    padding: 10px 20px; /* Reducción del padding */
+    text-align: center;
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1); /* Sombra hacia abajo */
+    bottom: 0;
+    /*margin-left: 100px;
+    margin-right: 100px;
+    */
+    width: 97%;
+}
+
+@media (max-width: 768px) {
+    .header-card {
+        padding: 10px;
+        width: calc(100% - 55px);
+        font-size: 10px; /* Ajusta el tamaño de fuente para pantallas pequeñas si es necesario */
+    }
+
+    .logo-container img {
+        width: 80px; /* Tamaño deseado para el logo */
+        height: 80px; /* Altura automática para mantener la proporción */
+        border-radius: 100px; /* Opcional: bordes redondeados para el logo */
+        
+    }
+
+    .header-card h1 {
+        margin: 0; /* Quita el margen del h1 */
+        font-size: 2em; /* Ajusta el tamaño del h1 */
+    }
+
+    .header-card h2 p {
+        margin: 0; /* Quita el margen del h1 */
+        font-size: 0.8em; /* Ajusta el tamaño del h1 */
+    }
+
+    .menu-card {
+        padding: 5px;
+        width: calc(30% - 30px);
+        height: 120px;
+    }
+
+    footer {
+        margin-top: 30px;
+        width: auto;
+    }
+}

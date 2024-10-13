@@ -1,0 +1,165 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <title>FUTURAR</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Poppins:300,300i,400,500,600,700,800,900,900i%7CRoboto:400%7CRubik:100,400,700">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style-futurar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/futurar.css' %}">
+    {% block extra_head %}{% endblock %}
+
+    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
+
+    <script>
+      function adjustTextSize(size) {
+      // Selecciona todos los elementos con la clase 'adjustable-text'
+      var adjustableElements = document.querySelectorAll('.adjustable-text, .adjustable-text p, .adjustable-text h1, .adjustable-text h2, .adjustable-text h3, .adjustable-text h4, .adjustable-text h5, .adjustable-text h6');
+      
+      // Itera sobre los elementos y ajusta su tamaño de fuente
+      adjustableElements.forEach(function(element) {
+      
+          element.style.fontSize = size + 'em';
+      
+      });
+
+      // Guarda el tamaño en localStorage
+      sessionStorage.setItem('fontSize', size);
+      }
+      // localStorage.clear();
+  
+      function toggleContrast() {
+          document.body.classList.toggle('high-contrast');
+          const isHighContrast = document.body.classList.contains('high-contrast');
+          sessionStorage.setItem('highContrast', isHighContrast ? 'true' : 'false');
+      }
+  
+      function toggleMenu() {
+          var menu = document.getElementById('menu');
+          menu.classList.toggle('open');
+      }
+  
+      function closeMenuIfClickedOutside(event) {
+          var menu = document.getElementById('menu');
+          var menuToggle = document.querySelector('.menu-toggle');
+          if (menu.classList.contains('open') && !menu.contains(event.target) && !menuToggle.contains(event.target)) {
+              menu.classList.remove('open');
+          }
+      }
+  
+      document.addEventListener('click', closeMenuIfClickedOutside);
+      
+      window.onload = function() {
+          // Aplicar el tamaño de fuente guardado si existe
+          const fontSize = sessionStorage.getItem('fontSize');
+          if (fontSize) {
+              var adjustableElements = document.querySelectorAll('.adjustable-text, .adjustable-text p, .adjustable-text h1, .adjustable-text h2, .adjustable-text h3, .adjustable-text h4, .adjustable-text h5, .adjustable-text h6, .adjustable-text a');
+              adjustableElements.forEach(function(element) {
+                  element.style.fontSize = fontSize + 'em';
+              });
+          }
+          const highContrast = localStorage.getItem('highContrast');
+          if (highContrast === 'true') {
+              document.body.classList.add('high-contrast');
+          }
+      }
+    </script>
+
+
+  </head>
+  <body>
+    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="{% static 'images/logo-inverse-415x103.png' %}" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <div class="preloader">
+      <div class="preloader-body">
+        <div class="cssload-container">
+          <div class="cssload-speeding-wheel"></div>
+        </div>
+        <p>Cargando...</p>
+      </div>
+    </div>
+    <div class="page">
+      <!-- Page Header-->
+      <header class="section page-header">
+        <!-- RD Navbar-->
+        <div class="rd-navbar-wrap">
+          <nav class="rd-navbar rd-navbar-classic" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed"
+            data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static"
+            data-lg-device-layout="rd-navbar-static" data-xl-layout="rd-navbar-static"
+            data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static"
+            data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px"
+            data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+            <div class="rd-navbar-main-outer">
+              <div class="rd-navbar-main">
+                <!-- RD Navbar Panel-->
+                <div class="rd-navbar-panel">
+                  <!-- RD Navbar Toggle-->
+                  <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                  <!-- RD Navbar Brand-->
+                  <div class="rd-navbar-brand">
+                    <a href="{% url 'inicio' %}"><img class="brand-logo-light" src="{% static 'images/logo-inverse-415x103.png' %}" alt="" width="150" height="50"/></a>
+                  </div>
+                  <div class="accessibility-controls">
+                    <button onclick="adjustTextSize(0.9)"><strong>A</strong></button>
+                    <button onclick="adjustTextSize(1.4)"><strong>A+</strong></button>
+                    <!-- <button onclick="toggleContrast()">🌙</button> modo oscuro en desarrollo -->
+                  </div>
+                </div>
+                
+                <div class="rd-navbar-main-element adjustable-text">
+                  <div class="rd-navbar-nav-wrap">
+                    <!-- RD Navbar Nav-->
+                    <ul class="rd-navbar-nav">
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="{% url 'inicio' %}"><img class="img-menu" src="{% static 'images/001-inicio.png' %}">&nbsp;INICIO</a></li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="{% url 'nosotros' %}"><img class="img-menu" src="{% static 'images/002-nosotros.png' %}">&nbsp;NOSOTROS</a></li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="{% url 'programas' %}"><img class="img-menu" src="{% static 'images/003-programas.png' %}">&nbsp;PROGRAMAS</a></li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="{% url 'actividades' %}"><img class="img-menu" src="{% static 'images/004-actividades.png' %}">&nbsp;ACTIVIDADES&nbsp;</a></li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="{% url 'historias' %}"><img class="img-menu" src="{% static 'images/005-historias.png' %}">&nbsp;HISTORIAS</a></li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="{% url 'donaciones' %}"><img class="img-menu" src="{% static 'images/007-donaciones.png' %}">&nbsp;DONACIONES</a></li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="{% url 'contacto' %}"><img class="img-menu" src="{% static 'images/008-contacto.png' %}">&nbsp;CONTACTO</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+      
+      {% block content %}{% endblock %}
+
+      <!-- Page Footer-->
+      <footer class="section footer-minimal context-dark">
+        <div class="container wow-outer">
+          <div class="wow fadeIn">
+            <div class="row row-50 row-lg-60">
+              <div class="col-12">
+                <ul class="social-list">
+                  <li><a class="icon-xl fa-facebook-official" href="https://www.facebook.com/profile.php?id=61566335102102"></a></li>
+                  <li><a class="icon-xl fa-instagram" href="https://www.instagram.com/futurarsinbarreras/profilecard/?igsh=anV2NHl4eWFlOTVv"></a></li>
+                  <li>&nbsp;</li>
+                </ul>
+              </div>
+            </div>
+            <p class="rights adjustable-text">
+              <span>&copy;&nbsp;Fundaci&oacute;n FUTURAR. Todos los derechos reservados. | </span>
+              <span>&nbsp;</span>Design&nbsp;by&nbsp;
+              <a href="https://www.templatemonster.com/">Templatemonster</a>
+            </p>
+          </div>
+        </div>
+        <div class="accessibility-controls">
+          <button class="button button-sm button-primary"><a href="{% url 'admin:index' %}">⚙️</a></button>
+        </div>  
+      </footer>
+    </div>
+    <div class="snackbars" id="form-output-global"></div>
+    <script src="{% static 'js/core.min.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <!-- coded by ragnar-->
+  </body>
+</html>

@@ -1,0 +1,62 @@
+/* historias.css */
+
+#articulos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.card {
+    background-color: #ffbf91; /* Color naranja suave */
+    border-radius: 15px;
+    padding: 20px;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.card img {
+    width: 100%;
+    max-width: 450px; /* Ajusta el tamaño máximo de la imagen */
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.card iframe {
+    width: 100%;
+    height: 315px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.card p {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.card .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #ff8c00; /* Color naranja más oscuro para el botón */
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.card .btn:hover {
+    background-color: #e07b00; /* Color más oscuro para el hover */
+}
